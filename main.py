@@ -2,18 +2,18 @@ from imports import *
 
 def main():
     clear()
-    _username = "1"
-    _password = "1"
-    correct_credentials = False
-    while not correct_credentials:
-        username = input("Usuario: ")
-        password = input("Contraseña: ")
-        if username != _username:
-            print("Usuario incorrecto")
-        if password != _password:
-            print("Contraseña incorrecta")  
-        elif username == _username:
-            correct_credentials = True
+    # _username = "1"
+    # _password = "1"
+    # correct_credentials = False
+    # while not correct_credentials:
+    #     username = input("Usuario: ")
+    #     password = input("Contraseña: ")
+    #     if username != _username:
+    #         print("Usuario incorrecto")
+    #     if password != _password:
+    #         print("Contraseña incorrecta")  
+    #     elif username == _username:
+    #         correct_credentials = True
     return menu()
 
 def menu():
@@ -29,13 +29,14 @@ def menu():
     clear()
     try:
         practica_seleccionada = practicas[int(practica) - 1]
-        print(f"---------------- {practica_seleccionada['nombre'].upper()} ----------------")
+        print(f"-------------------------------- {practica_seleccionada['nombre'].upper()} --------------------------------")
         practica_seleccionada["funcion"]()
         return sub_menu(practica_seleccionada)
     except:
         return menu()
 
 def sub_menu(practica):
+    print("\n-------------------------------- SUB MENÚ --------------------------------")
     print("1. Regresar al menú principal")
     print("2. Repetir práctica")
     print("3. Salir")
@@ -44,7 +45,7 @@ def sub_menu(practica):
         return menu()
     elif opcion == "2":
         clear()
-        print(f"---------------- {practica['nombre'].upper()} ----------------")
+        print(f"-------------------------------- {practica['nombre'].upper()} --------------------------------")
         practica["funcion"]()
         return sub_menu(practica)
     elif opcion == "3":
@@ -52,6 +53,5 @@ def sub_menu(practica):
     else:
         return sub_menu(practica)
     
-
 if __name__ == "__main__":
     main()
