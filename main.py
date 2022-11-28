@@ -2,18 +2,18 @@ from imports import *
 
 def main():
     clear()
-    # _username = "1"
-    # _password = "1"
-    # correct_credentials = False
-    # while not correct_credentials:
-    #     username = input("Usuario: ")
-    #     password = input("Contraseña: ")
-    #     if username != _username:
-    #         print("Usuario incorrecto")
-    #     if password != _password:
-    #         print("Contraseña incorrecta")  
-    #     elif username == _username:
-    #         correct_credentials = True
+    _username = "diego123"
+    _password = "123123"
+    correct_credentials = False
+    while not correct_credentials:
+        username = input("Usuario: ")
+        password = input("Contraseña: ")
+        if username != _username:
+            print("Usuario incorrecto")
+        if password != _password:
+            print("Contraseña incorrecta")  
+        elif username == _username:
+            correct_credentials = True
     return menu()
 
 def menu():
